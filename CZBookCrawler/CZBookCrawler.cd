@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CZBookCrawler.Crawler">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAQAA=</HashCode>
+      <FileName>Crawler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CZBookCrawler.Novel">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAIAIAAQAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Novel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CZBookCrawler.DataBase">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAAAAAQAAABAAAABEhAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="CZBookCrawler.Chapter">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Crawler.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Microsoft JhengHei UI" Size="9" />
+</ClassDiagram>
