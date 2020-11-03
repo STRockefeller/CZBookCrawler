@@ -12,7 +12,6 @@ C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\bin\Debug\EntityFramewor
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\bin\Debug\HtmlAgilityPack.xml
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\bin\Debug\System.Data.SQLite.xml
-C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.csprojAssemblyReference.cache
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.frmBase.resources
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.Properties.Resources.resources
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.csproj.GenerateResource.cache

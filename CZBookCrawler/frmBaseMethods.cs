@@ -21,7 +21,7 @@ namespace CZBookCrawler
         private async Task getContentAsync() => novels = await Crawler.StartCrawlerAsync();
         private delegate void setNovelInfoCallBack();
         /// <summary>
-        /// 解決跨執行緒無效
+        /// 讀取完成後的控制項改變，解決跨執行緒無效
         /// </summary>
         private void setNovelInfo()
         {
@@ -47,13 +47,26 @@ namespace CZBookCrawler
         /// </summary>
         private void readNovel()
         {
-            lblMaxPage.Text = $"/{novels.Count}";
-            btnNext.Enabled = true;
-            btnPrevious.Enabled = true;
-            tbxPage.Text = "1";
+            try
+            {
+                if (this.InvokeRequired == true)
+                {
+                    Action readNovelCallBack = new Action(readNovel);
+                    this.Invoke(readNovelCallBack);
+                }
+                else
+                {
+                    lblMaxPage.Text = $"/{novels.Count}";
+                    btnNext.Enabled = true;
+                    btnPrevious.Enabled = true;
+                    tbxPage.Text = "1";
+                }
+            }
+            catch { }
         }
         private void readNovel(int chapter)
         {
+            lblChapterName.Text = novels[chapter].ChapterTitle;
             tbxLog.Text = novels[chapter].ChapterContent;
             tbxLog.Refresh();
         }

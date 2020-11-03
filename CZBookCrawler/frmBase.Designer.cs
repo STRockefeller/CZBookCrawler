@@ -30,7 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpCrawler = new System.Windows.Forms.TabPage();
+            this.tbxDelay = new System.Windows.Forms.TextBox();
             this.btnExportAsText = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnSaveToDataBase = new System.Windows.Forms.Button();
             this.lblNovelName = new System.Windows.Forms.Label();
             this.btnURLConfirm = new System.Windows.Forms.Button();
@@ -45,10 +47,9 @@
             this.tbxLog = new System.Windows.Forms.TextBox();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbxDelay = new System.Windows.Forms.TextBox();
             this.lblMaxPage = new System.Windows.Forms.Label();
             this.tbxPage = new System.Windows.Forms.TextBox();
+            this.lblChapterName = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpCrawler.SuspendLayout();
             this.tpDataBase.SuspendLayout();
@@ -83,6 +84,14 @@
             this.tpCrawler.Text = "Crawler";
             this.tpCrawler.UseVisualStyleBackColor = true;
             // 
+            // tbxDelay
+            // 
+            this.tbxDelay.Location = new System.Drawing.Point(99, 70);
+            this.tbxDelay.Name = "tbxDelay";
+            this.tbxDelay.Size = new System.Drawing.Size(68, 25);
+            this.tbxDelay.TabIndex = 5;
+            this.tbxDelay.Text = "10";
+            // 
             // btnExportAsText
             // 
             this.btnExportAsText.Enabled = false;
@@ -93,6 +102,15 @@
             this.btnExportAsText.Text = "Export As Text";
             this.btnExportAsText.UseVisualStyleBackColor = true;
             this.btnExportAsText.Click += new System.EventHandler(this.btnExportAsText_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Delay (ms)";
             // 
             // btnSaveToDataBase
             // 
@@ -202,12 +220,12 @@
             // 
             // tbxLog
             // 
-            this.tbxLog.Location = new System.Drawing.Point(348, 12);
+            this.tbxLog.Location = new System.Drawing.Point(348, 37);
             this.tbxLog.Multiline = true;
             this.tbxLog.Name = "tbxLog";
             this.tbxLog.ReadOnly = true;
             this.tbxLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxLog.Size = new System.Drawing.Size(528, 371);
+            this.tbxLog.Size = new System.Drawing.Size(528, 346);
             this.tbxLog.TabIndex = 1;
             this.tbxLog.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxLog_KeyDown);
             // 
@@ -233,23 +251,6 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 15);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Delay (ms)";
-            // 
-            // tbxDelay
-            // 
-            this.tbxDelay.Location = new System.Drawing.Point(99, 70);
-            this.tbxDelay.Name = "tbxDelay";
-            this.tbxDelay.Size = new System.Drawing.Size(68, 25);
-            this.tbxDelay.TabIndex = 5;
-            this.tbxDelay.Text = "10";
-            // 
             // lblMaxPage
             // 
             this.lblMaxPage.AutoSize = true;
@@ -267,11 +268,21 @@
             this.tbxPage.TabIndex = 5;
             this.tbxPage.TextChanged += new System.EventHandler(this.tbxPage_TextChanged);
             // 
+            // lblChapterName
+            // 
+            this.lblChapterName.AutoSize = true;
+            this.lblChapterName.Location = new System.Drawing.Point(345, 12);
+            this.lblChapterName.Name = "lblChapterName";
+            this.lblChapterName.Size = new System.Drawing.Size(88, 15);
+            this.lblChapterName.TabIndex = 6;
+            this.lblChapterName.Text = "Chapter Name";
+            // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 450);
+            this.Controls.Add(this.lblChapterName);
             this.Controls.Add(this.tbxPage);
             this.Controls.Add(this.lblMaxPage);
             this.Controls.Add(this.btnPrevious);
@@ -313,6 +324,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblMaxPage;
         private System.Windows.Forms.TextBox tbxPage;
+        private System.Windows.Forms.Label lblChapterName;
     }
 }
 

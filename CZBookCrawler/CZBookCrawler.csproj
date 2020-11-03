@@ -105,6 +105,7 @@
   <ItemGroup>
     <Compile Include="Crawler.cs" />
     <Compile Include="DataBase.cs" />
+    <Compile Include="ExceptionCatch.cs" />
     <Compile Include="frmBase.cs">
       <SubType>Form</SubType>
     </Compile>

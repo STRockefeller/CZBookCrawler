@@ -40,15 +40,19 @@ namespace CZBookCrawler
             string path = folderPath + ChapterTitle + ".txt";
             path = fileNameCorrect(path);
             if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
-            FileStream fileStream = new FileStream(path, FileMode.Create);
+                ExceptionCatch.TryMethod(() => Directory.CreateDirectory(folderPath));
 
-            fileStream.Close();
-            using (StreamWriter sw = new StreamWriter(path))
+            ExceptionCatch.TryMethod(write);
+            void write()
             {
-                sw.WriteLine(ChapterTitle);
-                sw.WriteLine(ChapterContent);
-                sw.Close();
+                FileStream fileStream = new FileStream(path, FileMode.Create);
+                fileStream.Close();
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.WriteLine(ChapterTitle);
+                    sw.WriteLine(ChapterContent);
+                    sw.Close();
+                }
             }
         }
         /// <summary>

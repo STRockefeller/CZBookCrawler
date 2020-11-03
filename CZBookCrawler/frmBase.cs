@@ -20,12 +20,14 @@ namespace CZBookCrawler
 
         private void btnURLConfirm_Click(object sender, EventArgs e)
         {
-            try { Crawler.GetChapterList(tbxURL.Text, Convert.ToInt32(tbxDelay.Text)); }
-            catch (Exception ex)
-            {
-                newMessage(ex.Message);
-                return;
-            }
+            //try { Crawler.GetChapterList(tbxURL.Text, Convert.ToInt32(tbxDelay.Text)); }
+            //catch (Exception ex)
+            //{
+            //    newMessage(ex.Message);
+            //    return;
+            //}
+            ExceptionCatch.TryMethod(() => Crawler.GetChapterList(tbxURL.Text, Convert.ToInt32(tbxDelay.Text)),
+                newMessage);
             Thread thread = new Thread(threadContentAsync);
             void threadContentAsync()
             {
@@ -39,14 +41,22 @@ namespace CZBookCrawler
 
         private void btnSaveToDataBase_Click(object sender, EventArgs e)
         {
-            novels.ForEach(nov => nov.SaveToDataBase());
-            newMessage("Finish");
+            ExceptionCatch.TryMethod(save);
+            void save()
+            {
+                novels.ForEach(nov => nov.SaveToDataBase());
+                newMessage("Finish");
+            }
         }
 
         private void btnExportAsText_Click(object sender, EventArgs e)
         {
-            novels.ForEach(nov => nov.DownloadAsText());
-            newMessage("Finish");
+            ExceptionCatch.TryMethod(download);
+            void download()
+            {
+                novels.ForEach(nov => nov.DownloadAsText());
+                newMessage("Finish");
+            }
         }
 
         private void btnNovelNameConfirm_Click(object sender, EventArgs e)
@@ -57,8 +67,12 @@ namespace CZBookCrawler
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataBase.DeleteNovel(lblNovelName.Text);
-            newMessage("Finish");
+            ExceptionCatch.TryMethod(delete);
+            void delete()
+            {
+                DataBase.DeleteNovel(lblNovelName.Text);
+                newMessage("Finish");
+            }
         }
 
         private void tbxPage_TextChanged(object sender, EventArgs e) => readNovel(Convert.ToInt32(tbxPage.Text) - 1);
