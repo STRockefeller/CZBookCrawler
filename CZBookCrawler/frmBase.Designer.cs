@@ -291,6 +291,8 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmBase";
             this.Text = "CZBookCrawler By Rockefeller 2020";
+            this.Load += new System.EventHandler(this.frmBase_Load);
+            this.SizeChanged += new System.EventHandler(this.frmBase_SizeChanged);
             this.tabControl1.ResumeLayout(false);
             this.tpCrawler.ResumeLayout(false);
             this.tpCrawler.PerformLayout();

@@ -20,3 +20,4 @@ C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Release\CZBookCrawle
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Release\CZBookCrawler.csproj.CopyComplete
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Release\CZBookCrawler.exe
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Release\CZBookCrawler.pdb
+C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Release\CZBookCrawler.csprojAssemblyReference.cache

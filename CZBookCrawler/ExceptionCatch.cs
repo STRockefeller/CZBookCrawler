@@ -29,9 +29,12 @@ namespace CZBookCrawler
             string path = folderPath + "Logs.txt";
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
-            FileStream fileStream = new FileStream(path, FileMode.Create);
+            if (!File.Exists(path))
+            {
+                FileStream fileStream = new FileStream(path, FileMode.Create);
+                fileStream.Close();
+            }
 
-            fileStream.Close();
             using (StreamWriter sw = new StreamWriter(path))
             {
                 sw.WriteLine($"{DateTime.Now}\t{message}");

@@ -37,6 +37,7 @@ namespace CZBookCrawler
         {
             string folderPath = $".\\DownLoad\\Novels\\{Name}\\";
             folderPath = fileNameCorrect(folderPath);
+            ChapterTitle = ChapterTitle.Replace("\\", "");
             string path = folderPath + ChapterTitle + ".txt";
             path = fileNameCorrect(path);
             if (!Directory.Exists(folderPath))
@@ -73,6 +74,7 @@ namespace CZBookCrawler
             fileName = fileName.Replace("-", "");
             fileName = fileName.Replace("(", "");
             fileName = fileName.Replace(")", "");
+            fileName = fileName.Replace("?", "");
 
             return fileName;
         }

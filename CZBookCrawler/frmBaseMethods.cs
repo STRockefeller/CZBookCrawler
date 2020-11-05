@@ -11,6 +11,8 @@ namespace CZBookCrawler
     public partial class frmBase : Form
     {
         private List<Novel> novels = new List<Novel>();
+        private int formHeight;
+        private int formWidth;
         private void newMessage(string message)
         {
             tbxLog.Clear();

@@ -20,3 +20,4 @@ C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.exe
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.pdb
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.ProgressBar.resources
+C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.csprojAssemblyReference.cache

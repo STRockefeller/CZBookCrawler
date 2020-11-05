@@ -41,22 +41,20 @@ namespace CZBookCrawler
 
         private void btnSaveToDataBase_Click(object sender, EventArgs e)
         {
-            ExceptionCatch.TryMethod(save);
-            void save()
+            foreach (Novel novel in novels)
             {
-                novels.ForEach(nov => nov.SaveToDataBase());
-                newMessage("Finish");
+                ExceptionCatch.TryMethod(() => novel.SaveToDataBase());
             }
+            newMessage("Finish");
         }
 
         private void btnExportAsText_Click(object sender, EventArgs e)
         {
-            ExceptionCatch.TryMethod(download);
-            void download()
+            foreach(Novel novel in novels)
             {
-                novels.ForEach(nov => nov.DownloadAsText());
-                newMessage("Finish");
+                ExceptionCatch.TryMethod(() => novel.DownloadAsText());
             }
+            newMessage("Finish");
         }
 
         private void btnNovelNameConfirm_Click(object sender, EventArgs e)
@@ -95,6 +93,42 @@ namespace CZBookCrawler
 
                 default:
                     break;
+            }
+        }
+
+        private void frmBase_Load(object sender, EventArgs e)
+        {
+            formHeight = Height;
+            formWidth = Width;
+        }
+
+        private void frmBase_SizeChanged(object sender, EventArgs e)
+        {
+            if(Height>400)
+            {
+                changeSizeH(Height - formHeight);
+                formHeight = Height;
+            }
+            if(Width>900)
+            {
+                changeSizeW(Width - formWidth);
+                formWidth = Width;
+            }
+            void changeSizeH(int difHeight)
+            {
+                tbxLog.Height += difHeight;
+                btnNext.Top += difHeight;
+                btnPrevious.Top += difHeight;
+                lblMaxPage.Top += difHeight;
+                tbxPage.Top += difHeight;
+            }
+            void changeSizeW(int difWidth)
+            {
+                tbxLog.Width += difWidth;
+                btnNext.Left += difWidth;
+                btnPrevious.Left += difWidth;
+                lblMaxPage.Left += difWidth;
+                tbxPage.Left += difWidth;
             }
         }
     }
