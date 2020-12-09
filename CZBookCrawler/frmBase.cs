@@ -45,12 +45,14 @@ namespace CZBookCrawler
             {
                 ExceptionCatch.TryMethod(() => novel.SaveToDataBase());
             }
+            BookList.List.Add(novels[0].Name);
+            BookList.SaveList();
             newMessage("Finish");
         }
 
         private void btnExportAsText_Click(object sender, EventArgs e)
         {
-            foreach(Novel novel in novels)
+            foreach (Novel novel in novels)
             {
                 ExceptionCatch.TryMethod(() => novel.DownloadAsText());
             }
@@ -59,7 +61,7 @@ namespace CZBookCrawler
 
         private void btnNovelNameConfirm_Click(object sender, EventArgs e)
         {
-            novels = DataBase.ReadNovel(tbxNovelName.Text);
+            novels = DataBase.ReadNovel(cbxNovelName.Text);
             readNovel();
         }
 
@@ -100,16 +102,21 @@ namespace CZBookCrawler
         {
             formHeight = Height;
             formWidth = Width;
+            oriFormHeight = Height;
+            oriFormWidth = Width;
+            cbxNovelName.Items.AddRange(BookList.List.ToArray());
+            rememberOriginalSize();
         }
 
         private void frmBase_SizeChanged(object sender, EventArgs e)
         {
-            if(Height>400)
+            if (!isRemember) { return; }
+            if (Height > oriFormHeight)
             {
                 changeSizeH(Height - formHeight);
                 formHeight = Height;
             }
-            if(Width>900)
+            if (Width > oriFormWidth)
             {
                 changeSizeW(Width - formWidth);
                 formWidth = Width;
@@ -129,6 +136,12 @@ namespace CZBookCrawler
                 btnPrevious.Left += difWidth;
                 lblMaxPage.Left += difWidth;
                 tbxPage.Left += difWidth;
+            }
+            if (Width <= oriFormWidth && Height <= oriFormHeight)
+            {
+                this.Height = oriFormHeight;
+                this.Width = oriFormWidth;
+                resize();
             }
         }
     }

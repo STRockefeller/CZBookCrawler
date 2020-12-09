@@ -42,7 +42,6 @@
             this.tpDataBase = new System.Windows.Forms.TabPage();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNovelNameConfirm = new System.Windows.Forms.Button();
-            this.tbxNovelName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxLog = new System.Windows.Forms.TextBox();
             this.btnNext = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.lblMaxPage = new System.Windows.Forms.Label();
             this.tbxPage = new System.Windows.Forms.TextBox();
             this.lblChapterName = new System.Windows.Forms.Label();
+            this.cbxNovelName = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tpCrawler.SuspendLayout();
             this.tpDataBase.SuspendLayout();
@@ -170,9 +170,9 @@
             // 
             // tpDataBase
             // 
+            this.tpDataBase.Controls.Add(this.cbxNovelName);
             this.tpDataBase.Controls.Add(this.btnDelete);
             this.tpDataBase.Controls.Add(this.btnNovelNameConfirm);
-            this.tpDataBase.Controls.Add(this.tbxNovelName);
             this.tpDataBase.Controls.Add(this.label3);
             this.tpDataBase.Location = new System.Drawing.Point(4, 25);
             this.tpDataBase.Name = "tpDataBase";
@@ -194,20 +194,13 @@
             // 
             // btnNovelNameConfirm
             // 
-            this.btnNovelNameConfirm.Location = new System.Drawing.Point(102, 61);
+            this.btnNovelNameConfirm.Location = new System.Drawing.Point(102, 52);
             this.btnNovelNameConfirm.Name = "btnNovelNameConfirm";
             this.btnNovelNameConfirm.Size = new System.Drawing.Size(75, 23);
             this.btnNovelNameConfirm.TabIndex = 4;
             this.btnNovelNameConfirm.Text = "Confirm";
             this.btnNovelNameConfirm.UseVisualStyleBackColor = true;
             this.btnNovelNameConfirm.Click += new System.EventHandler(this.btnNovelNameConfirm_Click);
-            // 
-            // tbxNovelName
-            // 
-            this.tbxNovelName.Location = new System.Drawing.Point(90, 14);
-            this.tbxNovelName.Name = "tbxNovelName";
-            this.tbxNovelName.Size = new System.Drawing.Size(194, 25);
-            this.tbxNovelName.TabIndex = 6;
             // 
             // label3
             // 
@@ -277,6 +270,14 @@
             this.lblChapterName.TabIndex = 6;
             this.lblChapterName.Text = "Chapter Name";
             // 
+            // cbxNovelName
+            // 
+            this.cbxNovelName.FormattingEnabled = true;
+            this.cbxNovelName.Location = new System.Drawing.Point(90, 14);
+            this.cbxNovelName.Name = "cbxNovelName";
+            this.cbxNovelName.Size = new System.Drawing.Size(194, 23);
+            this.cbxNovelName.TabIndex = 8;
+            // 
             // frmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -317,7 +318,6 @@
         private System.Windows.Forms.TabPage tpDataBase;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnNovelNameConfirm;
-        private System.Windows.Forms.TextBox tbxNovelName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxLog;
         private System.Windows.Forms.Button btnNext;
@@ -327,6 +327,7 @@
         private System.Windows.Forms.Label lblMaxPage;
         private System.Windows.Forms.TextBox tbxPage;
         private System.Windows.Forms.Label lblChapterName;
+        private System.Windows.Forms.ComboBox cbxNovelName;
     }
 }
 

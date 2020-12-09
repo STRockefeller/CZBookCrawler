@@ -75,6 +75,14 @@ namespace CZBookCrawler
             fileName = fileName.Replace("(", "");
             fileName = fileName.Replace(")", "");
             fileName = fileName.Replace("?", "");
+            fileName = fileName.Replace("|", "");
+            fileName = fileName.Replace("*", "");
+            fileName = fileName.Replace(":", "");
+            fileName = fileName.Replace(">", "");
+            fileName = fileName.Replace("<", "");
+            //fileName = fileName.Replace(".", "");
+            //fileName = fileName.Replace("/", "");
+            //fileName = fileName.Replace("\\", "");
 
             return fileName;
         }

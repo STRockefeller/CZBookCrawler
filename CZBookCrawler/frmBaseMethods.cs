@@ -84,5 +84,33 @@ namespace CZBookCrawler
             if (page > 1)
                 tbxPage.Text = (page - 1).ToString();
         }
+        #region Size還原
+        private int oriFormHeight;
+        private int oriFormWidth;
+        private List<int> originalSize;
+        private bool isRemember = false;
+        private void rememberOriginalSize()
+        {
+            originalSize = new List<int>();
+            originalSize.Add(tbxLog.Height);
+            originalSize.Add(btnNext.Top);
+            originalSize.Add(btnPrevious.Top);
+            originalSize.Add(lblMaxPage.Top);
+            originalSize.Add(tbxPage.Top);
+            //oriFormHeight = Height;
+            //oriFormWidth = Width;
+            isRemember = true;
+        }
+        private void resize()
+        {
+            if (!isRemember) { return; }
+            if (originalSize.Count != 5) { return; }
+            tbxLog.Height = originalSize[0];
+            btnNext.Top = originalSize[1];
+            btnPrevious.Top = originalSize[2];
+            lblMaxPage.Top = originalSize[3];
+            tbxPage.Top = originalSize[4];
+        }
+        #endregion
     }
 }

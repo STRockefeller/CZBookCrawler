@@ -21,3 +21,5 @@ C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.pdb
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.ProgressBar.resources
 C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\obj\Debug\CZBookCrawler.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\source\repos\CZBookCrawler\CZBookCrawler\bin\Debug\Newtonsoft.Json.xml
