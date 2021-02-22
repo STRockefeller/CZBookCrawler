@@ -29,9 +29,9 @@ namespace CZBookCrawler
             ExceptionCatch.TryMethod(() => Crawler.GetChapterList(tbxURL.Text, Convert.ToInt32(tbxDelay.Text)),
                 newMessage);
             Thread thread = new Thread(threadContentAsync);
-            void threadContentAsync()
+            async void threadContentAsync()
             {
-                getContentAsync();
+                await getContentAsync();
                 setNovelInfo();
                 readNovel();
             }
@@ -45,7 +45,7 @@ namespace CZBookCrawler
             {
                 ExceptionCatch.TryMethod(() => novel.SaveToDataBase());
             }
-            BookList.List.Add(novels[0].Name);
+            BookList.List.Add(Novel.fileNameCorrect(novels[0].Name));
             BookList.SaveList();
             newMessage("Finish");
         }

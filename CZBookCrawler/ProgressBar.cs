@@ -17,11 +17,12 @@ namespace CZBookCrawler
             InitializeComponent();
         }
         public void Initialization(int max) => progressBarCrawler.Maximum = max;
-        public async Task progressNext()
+        public Task progressNext()
         {
             progressBarCrawler.Value++;
             lblProgress.Text = $"{progressBarCrawler.Value}/{progressBarCrawler.Maximum}";
             lblProgress.Refresh();
+            return new Task(()=> { });
         }
 
         private void button1_Click(object sender, EventArgs e) => this.Close();

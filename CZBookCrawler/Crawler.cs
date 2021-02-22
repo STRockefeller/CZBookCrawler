@@ -45,7 +45,7 @@ namespace CZBookCrawler
                 chapters.Add(chapter);
             }
         }
-        public static async Task<List<Novel>> StartCrawlerAsync()
+        public static Task<List<Novel>> StartCrawlerAsync()
         {
             if (chapters == null || chapters.Count == 0)
                 return null;
@@ -60,10 +60,11 @@ namespace CZBookCrawler
                 novel.ChapterTitle = chapter.name;
                 novel.ChapterContent = GetNovelContent(chapter.url);
                 novels.Add(novel);
-                await progressBar.progressNext();
+                progressBar.progressNext();
             }
             progressBar.Close();
-            return novels;
+            //return novels;
+            return new Task<List<Novel>>(() => novels);
         }
 
         private static string GetNovelContent(string url)
